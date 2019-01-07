@@ -1,0 +1,9 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getLoveScore() > 0,
+                'list-group-item-danger': getLoveScore() < 0}">
+    <h5 style="font-style: italic; color: grey; text-align: right;">{{ date | date : 'dd/MM/yyyy, hh:mm a' }}</h5>
+	<h4 [ngStyle]="{color: getColor()}">{{ title }}</h4>
+	<p [ngStyle]="{color: getColor()}">{{ content }}</p>
+	<button class="btn btn-success" (click)="addLoveScore()">Love it!</button>
+	<button class="btn btn-danger" (click)="removeLoveScore()">Don't love it!</button>
+</li>
